@@ -6,7 +6,7 @@ import CurrentTime from './components/CurrentTime'
 import UpdateWeather from './components/UpdateWeather'
 
 function App(props) {
-  // You can create as many States as you want, here I have two of them
+  // You can create as many states as you want, here I have two of them
   // Any time a state changes, the page will render those changes in real time
   let now = new Date().toLocaleTimeString()
   const [time, setTime] = useState(now)
@@ -17,6 +17,7 @@ function App(props) {
   return (
     <div>
       {/* You can pass multiple props to a child. They are sent to the child as a JS object */}
+      {/* You can even pass function references as a prop, see CurrentTime and UpdateWeather */}
       <HelloWorld weather={weather} description={description} />
       <GoodbyeWorld weather={weather} />
       <CurrentTime time={time} setTime={setTime} />
